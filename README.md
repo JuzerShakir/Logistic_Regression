@@ -13,3 +13,4 @@
 
 
 ## Definition
+`Logisitic Regression` is a classification algorithm where a dependent variable `'y'` that we want to predict takes on discrete values, for example `y ϵ {0,1}`. It is the most popular and widely used.
