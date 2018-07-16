@@ -6,9 +6,10 @@
 - [Notations](#notations)
 - [Defintion](#definition)
 - [Hypothesis Function](#hypothesis-function)
+- [Decision Boundary](#decision-boundary)
 
 ## Description
-A Mathematical intuition and quick guide and understanding of how Linear Regression Algorithms works. 
+A Mathematical intuition and quick guide and understanding of how Logistic Regression Algorithm works. 
 
 ## Prerequisite
  - [Standard equation of a Circle](https://www.khanacademy.org/math/algebra2/intro-to-conics-alg2/modal/v/writing-standard-equation-of-circle)
@@ -108,3 +109,23 @@ Here's how we can interpret it:
 <br>
 
 ### Setting discrete values
+We can translate the output of the `h(x)` function as follows:<br>
+
+<p align = 'center'><img src = 'Formulas/discrete_value_1.PNG'></p><br>
+
+Because the way that our `Logistic Function g(z)` behaves is that when its input is greater than or equal to `0`, its output is greater than equal to `0.5`.
+
+> **Note:**<br>
+> if z = 0, then e<sup>0</sup> = 1, ∴ g(z) = 0.5<br>
+> if z = ∞, then e<sup>-∞</sup> = 0, ∴ g(z) = 1<br>
+> if z = -∞, then e<sup>∞</sup> = 1, ∴ g(z) = 0<br>
+
+So if our input to the function `g` is θ<sup>T</sup>x, then that means when θ<sup>T</sup>x ≥ 0, then `h(x)` ≥ 0.5.<br>
+From all of these statements we can now say:<br>
+
+<p align = 'center'><img src = 'Formulas/discrete_value_2.PNG'></p><br>
+
+## Decision Boundary
+### Linear Decision Boundary
+
+
