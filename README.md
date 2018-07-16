@@ -251,4 +251,4 @@ The second sum, <img src = 'Formulas/term_1.PNG'>, means to explicitly exclude t
 ### Gradeint Descent
 <p align = 'center'><img src = 'Formulas/regularized_gradient_descent.PNG'></p><br>
 
-This may look identical to [Linear Regression's regularization Gradient Descent]() but the hypothesis function is different, here we have `Sigmoid or Logistic Function` and for Linear we have θ<sup>T</sup>x.
+This may look identical to [Linear Regression's regularization Gradient Descent](https://github.com/JuzerShakir/Linear_Regression#gradient-descent-for-regularization) but the hypothesis function is different, here we have `Sigmoid or Logistic Function` and for Linear we have θ<sup>T</sup>x.
