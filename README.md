@@ -7,6 +7,8 @@
 - [Defintion](#definition)
 - [Hypothesis Function](#hypothesis-function)
 - [Decision Boundary](#decision-boundary)
+- [Cost Function](#cost-function)
+
 
 ## Description
 A Mathematical intuition and quick guide and understanding of how Logistic Regression Algorithm works. 
@@ -126,7 +128,7 @@ From all of these statements we can now say:<br>
 <p align = 'center'><img src = 'Formulas/discrete_value_2.PNG'></p><br>
 
 ## Decision Boundary
-The decision boundary is the line that separates the area where `y=1` and where `y=0`. It is created by our hypothesis function.
+The decision boundary is the line that separates the area of `y=1` and `y=0`. It is created by our hypothesis function.
 
 ### Linear Decision Boundary
 For example : if<br>
@@ -149,4 +151,30 @@ In this case our decision boundary is a straight line placed on the graph where 
 
 <br>
 
+### Non-Linear Decision Boundary
+The above input to the `Logistic or Sigmoid Function` was linear but 
+θ<sup>T</sup>x can also bea function that describes a circle or any other function.<br>
 
+For example:<br>
+<p align = center>h(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub><sup>2</sup> + θ<sub>2</sub>x<sub>2</sub><sup>2</sup><br>
+and θ<sub>0</sub> = -1, θ<sub>1</sub> = 1, θ<sub>2</sub> = 1</p>
+
+So `y = 1` if:
+<p align = center>-1 + x<sub>1</sub><sup>2</sup> + x<sub>2</sub><sup>2</sup> ≥ 0<br>
+or <br>
+x<sub>1</sub><sup>2</sup> + x<sub>2</sub><sup>2</sup> ≥ 1<br></p> 
+
+<br>
+
+So if we were to plot the decision boundary of this, it would be a circle with radius 1 centered at the origin.
+
+<br>
+
+<p align = 'center'><img src = 'Formulas/non-linear_decision_graph.PNG'></p><br>
+
+Everything outside the circle is `y=1` and inside is `y=0`.
+
+> **Note:**<br>
+> We do not need to define the decision boundary. The training set will fit the parameters θ and once you have them then that will define decision boundary.
+
+## Cost Function
