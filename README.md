@@ -5,7 +5,7 @@
 - [Prerequisite](#prerequisite)
 - [Notations](#notations)
 - [Defintion](#definition)
-- [Hypothesis Function](#hypothesis_function)
+- [Hypothesis Function](#hypothesis-function)
 
 ## Description
 A Mathematical intuition and quick guide and understanding of how Linear Regression Algorithms works. 
@@ -58,8 +58,7 @@ Another name for the class that we denote with `'0'` is the `'negative class'` a
 Classification probelms like these are also called `'Binary Classification'` problem where we have only two outputs, either `'0'` or `'1'`.
 
 ## Hypothesis Function
-
-We could appraoch the classification problem ignoring the fact that `'y'` is discrete valued, and use <a href = 'https://github.com/JuzerShakir/Linear_Regression#formula-for-univariate-linear-regression'>Linear Regression</a> algorithm to try to predict `'y'` given `'x'`. However, it is easy to construct examples where this method performs very poorly. And also it doesn't make sense for our `'h(x)'` to take values larger than `1` or smaller than `0` when we konw `'y ϵ {0,1}'`. To fix this, we need to change the form of our `'h(x)'` to satisfy 0 ≤ h(x) ≤ 1.
+We could appraoch the classification problem ignoring the fact that `'y'` is discrete valued, and use [Linear Regression]( https://github.com/JuzerShakir/Linear_Regression#formula-for-univariate-linear-regression) algorithm to try to predict `'y'` given `'x'`. However, it is easy to construct examples where this method performs very poorly. And also it doesn't make sense for our `'h(x)'` to take values larger than `1` or smaller than `0` when we konw `'y ϵ {0,1}'`. To fix this, we need to change the form of our `'h(x)'` to satisfy 0 ≤ h(x) ≤ 1.
 <br>
 This is achieved by plugging θ<sup>T</sup>x into the `'Logistic Function'` or also known as `'Sigmoid Function'`.
 
