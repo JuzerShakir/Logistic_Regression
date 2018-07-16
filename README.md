@@ -1,9 +1,13 @@
 # Logistic Regression
 
 ## Table of Contents
-- [Prerequisite](#prerequisite)
 - [Description](#description)
+- [Prerequisite](#prerequisite)
 - [Notations](#notations)
+- [Defintion](#definition)
+
+## Description
+A Mathematical intuition and quick guide and understanding of how Linear Regression Algorithms works. 
 
 ## Prerequisite
  - [Standard equation of a Circle](https://www.khanacademy.org/math/algebra2/intro-to-conics-alg2/modal/v/writing-standard-equation-of-circle)
@@ -11,6 +15,14 @@
 - [Logarithm](https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/v/logarithms)
 - [Dependent Probability](https://www.khanacademy.org/math/statistics-probability/probability-library/modal/v/analyzing-dependent-probability)
 
+## Notations
+- `m` 👉 Number of Training Examples.
+- `x` 👉 "input" variable / features.
+- `y` 👉 "ouput" variable / "target" variable.
+- `n` 👉 Number of feature variable `(x)`
+- `(x, y)` 👉 One training example.
+- `x`<sub>i</sub> , `y`<sub>i</sub>  👉 i<sup>th</sup> training example.
+- `x`<sub>i<sub>j</sub></sub> 👉 i<sup>th</sup> training example of the j<sup>th</sup> column / feature.
 
 ## Definition
 `Logisitic Regression` is a classification algorithm where a dependent variable `'y'` that we want to predict takes on discrete values, for example `y ϵ {0,1}`. It is the most popular and widely used.
@@ -28,7 +40,7 @@
 
 These are some of the area where `Logistic Regression` is used. Where we want to know whether an email recieved is `'Spam'` or `'Not-Spam'` and then place them to their predicted category. Whether the transaction is fradulent or not and whether the tumor is `'Benign'` or `'Malignant'`.
 <br>
-The way we approach to these type of classification problems where the prediction variable `'y'` does not take on continous value is we set `'y'` to take on `'discrete values'`, for example:<br>
+The way we approach to these type of classification problems where the prediction variable `'y'` does not take on continous value, is we set `'y'` to take on `'discrete values'`, for example:<br>
 <pre align = center>y ϵ {0,1}          0 : 'Nagative Class'
                     1 :  'Positive Class' </pre>
 
