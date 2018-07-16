@@ -10,6 +10,7 @@
 - [Cost Function](#cost-function)
 - [Gradient Descent](#gradient-descent)
 - [Multiclass Classification](#multiclass-classification)
+- [Regularization](#regularization)
 
 ## Description
 A Mathematical intuition and quick guide and understanding of how Logistic Regression Algorithm works. 
@@ -220,3 +221,10 @@ Working out the derivative part using Calculus we get:<br>
 This algorithm looks similar to [Gradient Descent of Linear Regression](https://github.com/JuzerShakir/Linear_Regression#gradient-descent-for-multivariate-linear-regression) but its not since `h(x)` here is a `logistic/sigmoid function` and `h(x)` in `linear regression` is θ<sup>T</sup>x.
 
 ## Multiclass Classification
+Now we will approach the classification of data when we have more than `2 categories`. Instead of y ϵ {0,1} we will expand our definition so that y ϵ {0,1,2....,n}.<br>
+We need to predict the probability that `y` is a member of one of our classes from {0,1,2....,n}.<br>
+<p align = 'center'><img src = 'Formulas/Multiclass_Probability.PNG'></p><br>
+
+We apply `Logistic Regression` to each class, and then choose hypothesis which returned the highest probability and use to predict new `x` value.
+
+## Regularization
