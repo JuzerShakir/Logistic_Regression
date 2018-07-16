@@ -9,6 +9,7 @@
 - [Decision Boundary](#decision-boundary)
 - [Cost Function](#cost-function)
 - [Gradient Descent](#gradient-descent)
+- [Multiclass Classification](#multiclass-classification)
 
 ## Description
 A Mathematical intuition and quick guide and understanding of how Logistic Regression Algorithm works. 
@@ -211,3 +212,11 @@ Therefore, our `Cost function` is :<br>
 <p align = 'center'><img src = 'Formulas/cost-func_3.PNG'></p><br>
 
 ## Gradient Descent
+General form of Gradient Descent :<br>
+<p align = 'center'><img src = 'Formulas/general_gradient_descent.PNG'></p><br>
+Working out the derivative part using Calculus we get:<br>
+<p align = 'center'><img src = 'Formulas/gradient_descent.PNG'></p><br>
+
+This algorithm looks similar to [Gradient Descent of Linear Regression](https://github.com/JuzerShakir/Linear_Regression#gradient-descent-for-multivariate-linear-regression) but its not since `h(x)` here is a `logistic/sigmoid function` and `h(x)` in `linear regression` is θ<sup>T</sup>x.
+
+## Multiclass Classification
