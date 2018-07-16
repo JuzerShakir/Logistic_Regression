@@ -8,7 +8,7 @@
 - [Hypothesis Function](#hypothesis-function)
 - [Decision Boundary](#decision-boundary)
 - [Cost Function](#cost-function)
-
+- [Gradient Descent](#gradient-descent)
 
 ## Description
 A Mathematical intuition and quick guide and understanding of how Logistic Regression Algorithm works. 
@@ -153,7 +153,7 @@ In this case our decision boundary is a straight line placed on the graph where 
 
 ### Non-Linear Decision Boundary
 The above input to the `Logistic or Sigmoid Function` was linear but 
-θ<sup>T</sup>x can also bea function that describes a circle or any other function.<br>
+θ<sup>T</sup>x can also be a function that describes a circle or any other function.<br>
 
 For example:<br>
 <p align = center>h(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub><sup>2</sup> + θ<sub>2</sub>x<sub>2</sub><sup>2</sup><br>
@@ -178,3 +178,36 @@ Everything outside the circle is `y=1` and inside is `y=0`.
 > We do not need to define the decision boundary. The training set will fit the parameters θ and once you have them then that will define decision boundary.
 
 ## Cost Function
+If we choose the cost function of [Linear Regression](https://github.com/JuzerShakir/Linear_Regression#cost-function-for-univariate-linear-regression) (MSE), it turns out that this would not guarantee that when we run Gradient Desccent, it will converge to global minimum because here our hypothesis function `h(x)` is not linear, it is a sigmoid function and when we plot `J(θ)` with respect to `θ`, this is what it looks like:<br>
+<p align = 'center'><img src = 'Formulas/non-convex.PNG'></p><br>
+Since this is has many local minimum, the Gradient Descent will not guarantee to converge to global minimum. We can also call this as non-convex function. We need a convex function which has no local minimum but one globla minimum.
+
+<br>
+
+Our cost function for Logistic Regression:<br>
+<p align = 'center'><img src = 'Formulas/cost-func_1.PNG'></p><br>
+
+When `y=1`, we get the following plot for `J(θ)` vs `h(x)`:<br>
+<p align = 'center'><img src = 'Formulas/cost-func_graph_1.PNG'></p><br>
+
+Few interesting properties about this we see are:
+<p align = center>if y = 1 and h(x) = 1, then Cost J(θ) = 0<br>
+But as h(x) approaches 0, Cost approaches ∞</p><br>
+
+Similarly When `y = 0`, we get the following plot for `J(θ)` vs `h(x)`:<br>
+<p align = 'center'><img src = 'Formulas/cost-func_graph_2.PNG'></p><br>
+
+Few interesting properties about this we see are:
+<p align = center>if y = 0 and h(x) = 0, then Cost J(θ) = 0<br>
+But as h(x) approaches 1, Cost approaches ∞</p><br>
+
+Writing the cost function this way guarantees that J(θ) is convex for logistic regression.<br>
+
+We can compress our `Cost Function's` two conditional cases into one case:<br>
+<p align = 'center'><img src = 'Formulas/cost-func_2.PNG'></p><br>
+
+Notice that when `y=1`, then the second term will be zero and will not affect the result. And if `y=0`, then the first term will be zero and will not affect the result.<br>
+Therefore, our `Cost function` is :<br>
+<p align = 'center'><img src = 'Formulas/cost-func_3.PNG'></p><br>
+
+## Gradient Descent
