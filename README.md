@@ -249,3 +249,6 @@ We can regularize this equation by adding a term to the end:<br>
 The second sum, <img src = 'Formulas/term_1.PNG'>, means to explicitly exclude the bias term, θ<sub>0</sub>, i.e the θ vector is indexed from 0 to n (holding n+1 values, θ<sub>0</sub> through θ<sub>n</sub>), and this sum explicitly skips θ<sub>0</sub>, by running from 1 to n. Thus, when computing the equation, we should continously update the 2 following equation:
 
 ### Gradeint Descent
+<p align = 'center'><img src = 'Formulas/regularized_gradient_descent.PNG'></p><br>
+
+This may look identical to [Linear Regression's regularization Gradient Descent]() but the hypothesis function is different, here we have `Sigmoid or Logistic Function` and for Linear we have θ<sup>T</sup>x.
