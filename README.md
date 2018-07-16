@@ -73,7 +73,7 @@ This is achieved by plugging θ<sup>T</sup>x into the `'Logistic Function'` or a
 
 <br>
 
-**Graph of Sigmoid Function:**
+**Graph of Sigmoid Function: g(z) with respect to z**
 <p align = 'center'><img src = 'Formulas/Sigmoid_Func_Graph.png'></p>
 
 <br>
@@ -117,8 +117,8 @@ Because the way that our `Logistic Function g(z)` behaves is that when its input
 
 > **Note:**<br>
 > if z = 0, then e<sup>0</sup> = 1, ∴ g(z) = 0.5<br>
-> if z = ∞, then e<sup>-∞</sup> = 0, ∴ g(z) = 1<br>
-> if z = -∞, then e<sup>∞</sup> = 1, ∴ g(z) = 0<br>
+> if z = ∞, then e<sup>-∞</sup> = 0, ∴ g(z) approaches 1<br>
+> if z = -∞, then e<sup>∞</sup> = 1, ∴ g(z) approaches 0<br>
 
 So if our input to the function `g` is θ<sup>T</sup>x, then that means when θ<sup>T</sup>x ≥ 0, then `h(x)` ≥ 0.5.<br>
 From all of these statements we can now say:<br>
@@ -126,6 +126,27 @@ From all of these statements we can now say:<br>
 <p align = 'center'><img src = 'Formulas/discrete_value_2.PNG'></p><br>
 
 ## Decision Boundary
+The decision boundary is the line that separates the area where `y=1` and where `y=0`. It is created by our hypothesis function.
+
 ### Linear Decision Boundary
+For example : if<br>
+<p align = center>h(x) = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + θ<sub>2</sub>x<sub>2</sub><br>
+and θ<sub>0</sub> = 5, θ<sub>1</sub> = -1, θ<sub>2</sub> = 0</p>
+
+So `y = 1` if:
+<p align = center>5 + (-1)x<sub>1</sub> + 0x<sub>2</sub> ≥ 0<br>
+5-x<sub>1</sub>  ≥ 0 <br>
+-x<sub>1</sub> ≥ -5 <br>
+x<sub>1</sub> ≤ 5 </p> 
+
+<br>
+
+In this case our decision boundary is a straight line placed on the graph where x<sub>1</sub> = 5 and everything to the left of that denotes `y = 1` while everything to the right of that denotes `y = 0`.
+
+<br>
+
+<p align = 'center'><img src = 'Formulas/linear_decision_graph.PNG'></p>
+
+<br>
 
 
