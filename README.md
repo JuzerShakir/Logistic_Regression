@@ -5,6 +5,7 @@
 - [Prerequisite](#prerequisite)
 - [Notations](#notations)
 - [Defintion](#definition)
+- [Hypothesis Function](#hypothesis_function)
 
 ## Description
 A Mathematical intuition and quick guide and understanding of how Linear Regression Algorithms works. 
@@ -55,3 +56,56 @@ Another name for the class that we denote with `'0'` is the `'negative class'` a
 <br>
 
 Classification probelms like these are also called `'Binary Classification'` problem where we have only two outputs, either `'0'` or `'1'`.
+
+## Hypothesis Function
+
+We could appraoch the classification problem ignoring the fact that `'y'` is discrete valued, and use <a href = 'https://github.com/JuzerShakir/Linear_Regression#formula-for-univariate-linear-regression'>Linear Regression</a> algorithm to try to predict `'y'` given `'x'`. However, it is easy to construct examples where this method performs very poorly. And also it doesn't make sense for our `'h(x)'` to take values larger than `1` or smaller than `0` when we konw `'y ϵ {0,1}'`. To fix this, we need to change the form of our `'h(x)'` to satisfy 0 ≤ h(x) ≤ 1.
+<br>
+This is achieved by plugging θ<sup>T</sup>x into the `'Logistic Function'` or also known as `'Sigmoid Function'`.
+
+<br>
+
+**Sigmoid Function:**
+
+<br>
+
+<p align = 'center'><img src = 'Formulas/Sigmoid_Func.PNG'></p>
+
+<br>
+
+**Graph of Sigmoid Function:**
+<p align = 'center'><img src = 'Formulas/Sigmoid_Func_Graph.png'></p>
+
+<br>
+
+This function has 2 horizonatal asymptotes. As `'z'` approaches to `-∞` , g(z) approaches to `0` and z approaches to `∞`, g(z) approaches to `1` and `y-intercept` is `0.5` when `'z'` is `0`.<br>
+The function `g(z)` shown above, maps to any real number between `0` and `1` interval, making it useful for tranforming an arbitrary valued function into a fucntion better suited for classification.
+
+<br>
+
+Now lets set `'z'` to θ<sup>T</sup>x and pass it to our `'h(x)'`:
+
+<br>
+
+<p align = 'center'><img src = 'Formulas/hypothesis_fun.PNG'></p>
+
+<br>
+
+`h(x)` will give us the probability that our output is 1. For example, `h(x) = 0.7` gives us the probability of `70%` that our output is `1`. Here's how we interpret it:
+
+<br>
+
+<p align = 'center'><img src = 'Formulas/probability_1.PNG'></p>
+
+<br>
+
+Since here the probability of `'y'` is `0.7` then the probability of `'y'` being `0` is `0.3` since both probability should add up to `1`.<br>
+Here's how we can interpret it:
+
+<br>
+
+<p align = 'center'><img src = 'Formulas/probability_2.PNG'></p>
+
+<br>
+
+### Setting discrete values
