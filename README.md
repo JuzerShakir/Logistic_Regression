@@ -228,3 +228,24 @@ We need to predict the probability that `y` is a member of one of our classes fr
 We apply `Logistic Regression` to each class, and then choose hypothesis which returned the highest probability and use to predict new `x` value.
 
 ## Regularization
+Let's say that we have a function:<br>
+h(x) = g(θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + θ<sub>2</sub>x<sub>1</sub><sup>2</sup> + θ<sub>3</sub>x<sub>1</sub><sup>2</sup>x<sub>2</sub> + 
+θ<sub>4</sub>x<sub>1</sub><sup>2</sup>x<sub>2</sub><sup>2</sup> + 
+θ<sub>5</sub>x<sub>1</sub><sup>2</sup>x<sub>2</sub><sup>3</sup>
+............)<br>
+and it fits the data as follows:<br>
+<p align = 'center'><img src = 'Formulas/overfit.PNG'></p><br>
+As we can clearly see this function overfits the data and will not generalize well for new or unseen data.
+
+### Cost Function for Regularization
+We'll want to eliminate the influence of the parameters without actually getting rid of these features or changing the form of the hypothesis function. We instead modify our `Cost function.`<br>
+Our Cost Function was:<br>
+
+<p align = 'center'><img src = 'Formulas/cost-func_3.PNG'></p><br>
+
+We can regularize this equation by adding a term to the end:<br>
+<p align = 'center'><img src = 'Formulas/regularized_cost-func.PNG'></p><br>
+
+The second sum, <img src = 'Formulas/term_1.PNG'>, means to explicitly exclude the bias term, θ<sub>0</sub>, i.e the θ vector is indexed from 0 to n (holding n+1 values, θ<sub>0</sub> through θ<sub>n</sub>), and this sum explicitly skips θ<sub>0</sub>, by running from 1 to n. Thus, when computing the equation, we should continously update the 2 following equation:
+
+### Gradeint Descent
