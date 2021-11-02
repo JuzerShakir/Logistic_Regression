@@ -36,156 +36,131 @@
 <p class="has-line-data" data-line-start="33" data-line-end="34"><code>Logisitic Regression</code> is a classification algorithm where a dependent variable <code>'y'</code> that we want to predict takes on discrete values, for example <code>y ϵ {0,1}</code>. It is the most popular and widely used.</p>
 <p class="has-line-data" data-line-start="35" data-line-end="36">&lt;br&gt;</p>
 <h3 class="code-line" data-line-start=37 data-line-end=38><a id="Example_of_Classification_Problem_37"></a>Example of Classification Problem</h3>
-<table class="table table-striped table-bordered">
-<thead>
-<tr>
-<th style="text-align:center">Subject</th>
-<th style="text-align:center">Negative</th>
-<th style="text-align:center">Positive</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Email</td>
-<td style="text-align:center">Not-Spam</td>
-<td style="text-align:center">Spam</td>
-</tr>
-<tr>
-<td style="text-align:center">Online Transaction (Fradulent)</td>
-<td style="text-align:center">No</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:center">Tumor</td>
-<td style="text-align:center">Benign</td>
-<td style="text-align:center">Malignant</td>
-</tr>
-</tbody>
-</table>
-<p class="has-line-data" data-line-start="44" data-line-end="45">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="46" data-line-end="51">These are some of the area where <code>Logistic Regression</code> is used. Where we want to know whether an email recieved is <code>'Spam'</code> or <code>'Not-Spam'</code> and then place them to their predicted category. Whether the transaction is fradulent or not and whether the tumor is <code>'Benign'</code> or <code>'Malignant'</code>.<br>
+<p class="has-line-data" data-line-start="39" data-line-end="40">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/example.png’&gt;&lt;/p&gt;</p>
+<p class="has-line-data" data-line-start="41" data-line-end="42">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="43" data-line-end="48">These are some of the area where <code>Logistic Regression</code> is used. Where we want to know whether an email recieved is <code>'Spam'</code> or <code>'Not-Spam'</code> and then place them to their predicted category. Whether the transaction is fradulent or not and whether the tumor is <code>'Benign'</code> or <code>'Malignant'</code>.<br>
 &lt;br&gt;<br>
 The way we approach to these type of classification problems where the prediction variable <code>'y'</code> does not take on continous value, is we set <code>'y'</code> to take on <code>'discrete values'</code>, for example:&lt;br&gt;<br>
 &lt;pre align = center&gt;y ϵ {0,1} 0 : ‘Nagative Class’<br>
 1 : ‘Positive Class’ &lt;/pre&gt;</p>
-<p class="has-line-data" data-line-start="52" data-line-end="53">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="54" data-line-end="55">We can think of predicting value <code>'y'</code> taking on two value either <code>'0'</code> or <code>'1'</code>, either <code>'Not-Spam'</code> or <code>'Spam'</code>, either <code>'Benign'</code> or <code>'Malignant'</code> etc.</p>
-<p class="has-line-data" data-line-start="56" data-line-end="57">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="58" data-line-end="59">Another name for the class that we denote with <code>'0'</code> is the <code>'negative class'</code> and another name for the class that we denote with <code>'1'</code> is <code>'positive class'</code>. So <code>'0'</code> we denote as <code>'Not-Spam'</code> and <code>'1'</code> as <code>'Spam'</code>. The assignment of these classes is arbitrary and it doesn’t really matter but often there is an intuition that a <code>'negative class' '0'</code> is conveying the absence of something.</p>
-<p class="has-line-data" data-line-start="60" data-line-end="61">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="62" data-line-end="63">Classification probelms like these are also called <code>'Binary Classification'</code> problem where we have only two outputs, either <code>'0'</code> or <code>'1'</code>.</p>
-<h2 class="code-line" data-line-start=64 data-line-end=65><a id="Hypothesis_Function_64"></a>Hypothesis Function</h2>
-<p class="has-line-data" data-line-start="65" data-line-end="68">We could appraoch the classification problem ignoring the fact that <code>'y'</code> is discrete valued, and use <a href="https://github.com/JuzerShakir/Linear_Regression#formula-for-univariate-linear-regression">Linear Regression</a> algorithm to try to predict <code>'y'</code> given <code>'x'</code>. However, it is easy to construct examples where this method performs very poorly. And also it doesn’t make sense for our <code>'h(x)'</code> to take values larger than <code>1</code> or smaller than <code>0</code> when we konw <code>'y ϵ {0,1}'</code>. To fix this, we need to change the form of our <code>'h(x)'</code> to satisfy 0 ≤ h(x) ≤ 1.<br>
+<p class="has-line-data" data-line-start="49" data-line-end="50">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="51" data-line-end="52">We can think of predicting value <code>'y'</code> taking on two value either <code>'0'</code> or <code>'1'</code>, either <code>'Not-Spam'</code> or <code>'Spam'</code>, either <code>'Benign'</code> or <code>'Malignant'</code> etc.</p>
+<p class="has-line-data" data-line-start="53" data-line-end="54">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="55" data-line-end="56">Another name for the class that we denote with <code>'0'</code> is the <code>'negative class'</code> and another name for the class that we denote with <code>'1'</code> is <code>'positive class'</code>. So <code>'0'</code> we denote as <code>'Not-Spam'</code> and <code>'1'</code> as <code>'Spam'</code>. The assignment of these classes is arbitrary and it doesn’t really matter but often there is an intuition that a <code>'negative class' '0'</code> is conveying the absence of something.</p>
+<p class="has-line-data" data-line-start="57" data-line-end="58">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="59" data-line-end="60">Classification probelms like these are also called <code>'Binary Classification'</code> problem where we have only two outputs, either <code>'0'</code> or <code>'1'</code>.</p>
+<h2 class="code-line" data-line-start=61 data-line-end=62><a id="Hypothesis_Function_61"></a>Hypothesis Function</h2>
+<p class="has-line-data" data-line-start="62" data-line-end="65">We could appraoch the classification problem ignoring the fact that <code>'y'</code> is discrete valued, and use <a href="https://github.com/JuzerShakir/Linear_Regression#formula-for-univariate-linear-regression">Linear Regression</a> algorithm to try to predict <code>'y'</code> given <code>'x'</code>. However, it is easy to construct examples where this method performs very poorly. And also it doesn’t make sense for our <code>'h(x)'</code> to take values larger than <code>1</code> or smaller than <code>0</code> when we konw <code>'y ϵ {0,1}'</code>. To fix this, we need to change the form of our <code>'h(x)'</code> to satisfy 0 ≤ h(x) ≤ 1.<br>
 &lt;br&gt;<br>
 This is achieved by plugging θ&lt;sup&gt;T&lt;/sup&gt;x into the <code>'Logistic Function'</code> or also known as <code>'Sigmoid Function'</code>.</p>
-<p class="has-line-data" data-line-start="69" data-line-end="70">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="71" data-line-end="72"><strong>Sigmoid Function:</strong></p>
-<p class="has-line-data" data-line-start="73" data-line-end="74">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="75" data-line-end="76">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/Sigmoid_Func.PNG’&gt;&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="77" data-line-end="78">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="79" data-line-end="81"><strong>Graph of Sigmoid Function: g(z) with respect to z</strong><br>
+<p class="has-line-data" data-line-start="66" data-line-end="67">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="68" data-line-end="69"><strong>Sigmoid Function:</strong></p>
+<p class="has-line-data" data-line-start="70" data-line-end="71">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="72" data-line-end="73">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/Sigmoid_Func.PNG’&gt;&lt;/p&gt;</p>
+<p class="has-line-data" data-line-start="74" data-line-end="75">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="76" data-line-end="78"><strong>Graph of Sigmoid Function: g(z) with respect to z</strong><br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/Sigmoid_Func_Graph.png’&gt;&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="82" data-line-end="83">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="84" data-line-end="86">This function has 2 horizonatal asymptotes. As <code>'z'</code> approaches to <code>-∞</code> , g(z) approaches to <code>0</code> and z approaches to <code>∞</code>, g(z) approaches to <code>1</code> and <code>y-intercept</code> is <code>0.5</code> when <code>'z'</code> is <code>0</code>.&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="79" data-line-end="80">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="81" data-line-end="83">This function has 2 horizonatal asymptotes. As <code>'z'</code> approaches to <code>-∞</code> , g(z) approaches to <code>0</code> and z approaches to <code>∞</code>, g(z) approaches to <code>1</code> and <code>y-intercept</code> is <code>0.5</code> when <code>'z'</code> is <code>0</code>.&lt;br&gt;<br>
 The function <code>g(z)</code> shown above, maps to any real number between <code>0</code> and <code>1</code> interval, making it useful for tranforming an arbitrary valued function into a fucntion better suited for classification.</p>
-<p class="has-line-data" data-line-start="87" data-line-end="88">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="89" data-line-end="90">Now lets set <code>'z'</code> to θ&lt;sup&gt;T&lt;/sup&gt;x and pass it to our <code>'h(x)'</code>:</p>
-<p class="has-line-data" data-line-start="91" data-line-end="92">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="93" data-line-end="94">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/hypothesis_fun.PNG’&gt;&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="95" data-line-end="96">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="97" data-line-end="98"><code>h(x)</code> will give us the probability that our output is 1. For example, <code>h(x) = 0.7</code> gives us the probability of <code>70%</code> that our output is <code>1</code>. Here’s how we interpret it:</p>
-<p class="has-line-data" data-line-start="99" data-line-end="100">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="101" data-line-end="102">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/probability_1.PNG’&gt;&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="103" data-line-end="104">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="105" data-line-end="107">Since here the probability of <code>'y'</code> is <code>0.7</code> then the probability of <code>'y'</code> being <code>0</code> is <code>0.3</code> since both probability should add up to <code>1</code>.&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="84" data-line-end="85">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="86" data-line-end="87">Now lets set <code>'z'</code> to θ&lt;sup&gt;T&lt;/sup&gt;x and pass it to our <code>'h(x)'</code>:</p>
+<p class="has-line-data" data-line-start="88" data-line-end="89">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="90" data-line-end="91">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/hypothesis_fun.PNG’&gt;&lt;/p&gt;</p>
+<p class="has-line-data" data-line-start="92" data-line-end="93">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="94" data-line-end="95"><code>h(x)</code> will give us the probability that our output is 1. For example, <code>h(x) = 0.7</code> gives us the probability of <code>70%</code> that our output is <code>1</code>. Here’s how we interpret it:</p>
+<p class="has-line-data" data-line-start="96" data-line-end="97">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="98" data-line-end="99">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/probability_1.PNG’&gt;&lt;/p&gt;</p>
+<p class="has-line-data" data-line-start="100" data-line-end="101">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="102" data-line-end="104">Since here the probability of <code>'y'</code> is <code>0.7</code> then the probability of <code>'y'</code> being <code>0</code> is <code>0.3</code> since both probability should add up to <code>1</code>.&lt;br&gt;<br>
 Here’s how we can interpret it:</p>
-<p class="has-line-data" data-line-start="108" data-line-end="109">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="110" data-line-end="111">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/probability_2.PNG’&gt;&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="112" data-line-end="113">&lt;br&gt;</p>
-<h3 class="code-line" data-line-start=114 data-line-end=115><a id="Setting_discrete_values_114"></a>Setting discrete values</h3>
-<p class="has-line-data" data-line-start="115" data-line-end="116">We can translate the output of the <code>h(x)</code> function as follows:&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="117" data-line-end="118">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/discrete_value_1.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="119" data-line-end="120">Because the way that our <code>Logistic Function g(z)</code> behaves is that when its input is greater than or equal to <code>0</code>, its output is greater than equal to <code>0.5</code>.</p>
+<p class="has-line-data" data-line-start="105" data-line-end="106">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="107" data-line-end="108">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/probability_2.PNG’&gt;&lt;/p&gt;</p>
+<p class="has-line-data" data-line-start="109" data-line-end="110">&lt;br&gt;</p>
+<h3 class="code-line" data-line-start=111 data-line-end=112><a id="Setting_discrete_values_111"></a>Setting discrete values</h3>
+<p class="has-line-data" data-line-start="112" data-line-end="113">We can translate the output of the <code>h(x)</code> function as follows:&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="114" data-line-end="115">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/discrete_value_1.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="116" data-line-end="117">Because the way that our <code>Logistic Function g(z)</code> behaves is that when its input is greater than or equal to <code>0</code>, its output is greater than equal to <code>0.5</code>.</p>
 <blockquote>
-<p class="has-line-data" data-line-start="121" data-line-end="125"><strong>Note:</strong>&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="118" data-line-end="122"><strong>Note:</strong>&lt;br&gt;<br>
 if z = 0, then e&lt;sup&gt;0&lt;/sup&gt; = 1, ∴ g(z) = 0.5&lt;br&gt;<br>
 if z = ∞, then e&lt;sup&gt;-∞&lt;/sup&gt; = 0, ∴ g(z) approaches 1&lt;br&gt;<br>
 if z = -∞, then e&lt;sup&gt;∞&lt;/sup&gt; = 1, ∴ g(z) approaches 0&lt;br&gt;</p>
 </blockquote>
-<p class="has-line-data" data-line-start="126" data-line-end="128">So if our input to the function <code>g</code> is θ&lt;sup&gt;T&lt;/sup&gt;x, then that means when θ&lt;sup&gt;T&lt;/sup&gt;x ≥ 0, then <code>h(x)</code> ≥ 0.5.&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="123" data-line-end="125">So if our input to the function <code>g</code> is θ&lt;sup&gt;T&lt;/sup&gt;x, then that means when θ&lt;sup&gt;T&lt;/sup&gt;x ≥ 0, then <code>h(x)</code> ≥ 0.5.&lt;br&gt;<br>
 From all of these statements we can now say:&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="129" data-line-end="130">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/discrete_value_2.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<h2 class="code-line" data-line-start=131 data-line-end=132><a id="Decision_Boundary_131"></a>Decision Boundary</h2>
-<p class="has-line-data" data-line-start="132" data-line-end="133">The decision boundary is the line that separates the area of <code>y=1</code> and <code>y=0</code>. It is created by our hypothesis function.</p>
-<h3 class="code-line" data-line-start=134 data-line-end=135><a id="Linear_Decision_Boundary_134"></a>Linear Decision Boundary</h3>
-<p class="has-line-data" data-line-start="135" data-line-end="138">For example : if&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="126" data-line-end="127">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/discrete_value_2.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
+<h2 class="code-line" data-line-start=128 data-line-end=129><a id="Decision_Boundary_128"></a>Decision Boundary</h2>
+<p class="has-line-data" data-line-start="129" data-line-end="130">The decision boundary is the line that separates the area of <code>y=1</code> and <code>y=0</code>. It is created by our hypothesis function.</p>
+<h3 class="code-line" data-line-start=131 data-line-end=132><a id="Linear_Decision_Boundary_131"></a>Linear Decision Boundary</h3>
+<p class="has-line-data" data-line-start="132" data-line-end="135">For example : if&lt;br&gt;<br>
 &lt;p align = center&gt;h(x) = θ&lt;sub&gt;0&lt;/sub&gt; + θ&lt;sub&gt;1&lt;/sub&gt;x&lt;sub&gt;1&lt;/sub&gt; + θ&lt;sub&gt;2&lt;/sub&gt;x&lt;sub&gt;2&lt;/sub&gt;&lt;br&gt;<br>
 and θ&lt;sub&gt;0&lt;/sub&gt; = 5, θ&lt;sub&gt;1&lt;/sub&gt; = -1, θ&lt;sub&gt;2&lt;/sub&gt; = 0&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="139" data-line-end="144">So <code>y = 1</code> if:<br>
+<p class="has-line-data" data-line-start="136" data-line-end="141">So <code>y = 1</code> if:<br>
 &lt;p align = center&gt;5 + (-1)x&lt;sub&gt;1&lt;/sub&gt; + 0x&lt;sub&gt;2&lt;/sub&gt; ≥ 0&lt;br&gt;<br>
 5-x&lt;sub&gt;1&lt;/sub&gt; ≥ 0 &lt;br&gt;<br>
 -x&lt;sub&gt;1&lt;/sub&gt; ≥ -5 &lt;br&gt;<br>
 x&lt;sub&gt;1&lt;/sub&gt; ≤ 5 &lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="145" data-line-end="146">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="147" data-line-end="148">In this case our decision boundary is a straight line placed on the graph where x&lt;sub&gt;1&lt;/sub&gt; = 5 and everything to the left of that denotes <code>y = 1</code> while everything to the right of that denotes <code>y = 0</code>.</p>
-<p class="has-line-data" data-line-start="149" data-line-end="150">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="151" data-line-end="152">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/linear_decision_graph.PNG’&gt;&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="153" data-line-end="154">&lt;br&gt;</p>
-<h3 class="code-line" data-line-start=155 data-line-end=156><a id="NonLinear_Decision_Boundary_155"></a>Non-Linear Decision Boundary</h3>
-<p class="has-line-data" data-line-start="156" data-line-end="158">The above input to the <code>Logistic or Sigmoid Function</code> was linear but<br>
+<p class="has-line-data" data-line-start="142" data-line-end="143">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="144" data-line-end="145">In this case our decision boundary is a straight line placed on the graph where x&lt;sub&gt;1&lt;/sub&gt; = 5 and everything to the left of that denotes <code>y = 1</code> while everything to the right of that denotes <code>y = 0</code>.</p>
+<p class="has-line-data" data-line-start="146" data-line-end="147">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="148" data-line-end="149">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/linear_decision_graph.PNG’&gt;&lt;/p&gt;</p>
+<p class="has-line-data" data-line-start="150" data-line-end="151">&lt;br&gt;</p>
+<h3 class="code-line" data-line-start=152 data-line-end=153><a id="NonLinear_Decision_Boundary_152"></a>Non-Linear Decision Boundary</h3>
+<p class="has-line-data" data-line-start="153" data-line-end="155">The above input to the <code>Logistic or Sigmoid Function</code> was linear but<br>
 θ&lt;sup&gt;T&lt;/sup&gt;x can also be a function that describes a circle or any other function.&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="159" data-line-end="162">For example:&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="156" data-line-end="159">For example:&lt;br&gt;<br>
 &lt;p align = center&gt;h(x) = θ&lt;sub&gt;0&lt;/sub&gt; + θ&lt;sub&gt;1&lt;/sub&gt;x&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt; + θ&lt;sub&gt;2&lt;/sub&gt;x&lt;sub&gt;2&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;br&gt;<br>
 and θ&lt;sub&gt;0&lt;/sub&gt; = -1, θ&lt;sub&gt;1&lt;/sub&gt; = 1, θ&lt;sub&gt;2&lt;/sub&gt; = 1&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="163" data-line-end="167">So <code>y = 1</code> if:<br>
+<p class="has-line-data" data-line-start="160" data-line-end="164">So <code>y = 1</code> if:<br>
 &lt;p align = center&gt;-1 + x&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt; + x&lt;sub&gt;2&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt; ≥ 0&lt;br&gt;<br>
 or &lt;br&gt;<br>
 x&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt; + x&lt;sub&gt;2&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt; ≥ 1&lt;br&gt;&lt;/p&gt;</p>
-<p class="has-line-data" data-line-start="168" data-line-end="169">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="170" data-line-end="171">So if we were to plot the decision boundary of this, it would be a circle with radius 1 centered at the origin.</p>
-<p class="has-line-data" data-line-start="172" data-line-end="173">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="174" data-line-end="175">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/non-linear_decision_graph.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="176" data-line-end="177">Everything outside the circle is <code>y=1</code> and inside is <code>y=0</code>.</p>
+<p class="has-line-data" data-line-start="165" data-line-end="166">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="167" data-line-end="168">So if we were to plot the decision boundary of this, it would be a circle with radius 1 centered at the origin.</p>
+<p class="has-line-data" data-line-start="169" data-line-end="170">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="171" data-line-end="172">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/non-linear_decision_graph.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="173" data-line-end="174">Everything outside the circle is <code>y=1</code> and inside is <code>y=0</code>.</p>
 <blockquote>
-<p class="has-line-data" data-line-start="178" data-line-end="180"><strong>Note:</strong>&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="175" data-line-end="177"><strong>Note:</strong>&lt;br&gt;<br>
 We do not need to define the decision boundary. The training set will fit the parameters θ and once you have them then that will define decision boundary.</p>
 </blockquote>
-<h2 class="code-line" data-line-start=181 data-line-end=182><a id="Cost_Function_181"></a>Cost Function</h2>
-<p class="has-line-data" data-line-start="182" data-line-end="185">If we choose the cost function of <a href="https://github.com/JuzerShakir/Linear_Regression#cost-function-for-univariate-linear-regression">Linear Regression</a> (MSE), it turns out that this would not guarantee that when we run Gradient Desccent, it will converge to global minimum because here our hypothesis function <code>h(x)</code> is not linear, it is a sigmoid function and when we plot <code>J(θ)</code> with respect to <code>θ</code>, this is what it looks like:&lt;br&gt;<br>
+<h2 class="code-line" data-line-start=178 data-line-end=179><a id="Cost_Function_178"></a>Cost Function</h2>
+<p class="has-line-data" data-line-start="179" data-line-end="182">If we choose the cost function of <a href="https://github.com/JuzerShakir/Linear_Regression#cost-function-for-univariate-linear-regression">Linear Regression</a> (MSE), it turns out that this would not guarantee that when we run Gradient Desccent, it will converge to global minimum because here our hypothesis function <code>h(x)</code> is not linear, it is a sigmoid function and when we plot <code>J(θ)</code> with respect to <code>θ</code>, this is what it looks like:&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/non-convex.PNG’&gt;&lt;/p&gt;&lt;br&gt;<br>
 Since this is has many local minimum, the Gradient Descent will not guarantee to converge to global minimum. We can also call this as non-convex function. We need a convex function which has no local minimum but one globla minimum.</p>
-<p class="has-line-data" data-line-start="186" data-line-end="187">&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="188" data-line-end="190">Our cost function for Logistic Regression:&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="183" data-line-end="184">&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="185" data-line-end="187">Our cost function for Logistic Regression:&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/cost-func_1.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="191" data-line-end="193">When <code>y=1</code>, we get the following plot for <code>J(θ)</code> vs <code>h(x)</code>:&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="188" data-line-end="190">When <code>y=1</code>, we get the following plot for <code>J(θ)</code> vs <code>h(x)</code>:&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/cost-func_graph_1.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="194" data-line-end="197">Few interesting properties about this we see are:<br>
+<p class="has-line-data" data-line-start="191" data-line-end="194">Few interesting properties about this we see are:<br>
 &lt;p align = center&gt;if y = 1 and h(x) = 1, then Cost J(θ) = 0&lt;br&gt;<br>
 But as h(x) approaches 0, Cost approaches ∞&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="198" data-line-end="200">Similarly When <code>y = 0</code>, we get the following plot for <code>J(θ)</code> vs <code>h(x)</code>:&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="195" data-line-end="197">Similarly When <code>y = 0</code>, we get the following plot for <code>J(θ)</code> vs <code>h(x)</code>:&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/cost-func_graph_2.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="201" data-line-end="204">Few interesting properties about this we see are:<br>
+<p class="has-line-data" data-line-start="198" data-line-end="201">Few interesting properties about this we see are:<br>
 &lt;p align = center&gt;if y = 0 and h(x) = 0, then Cost J(θ) = 0&lt;br&gt;<br>
 But as h(x) approaches 1, Cost approaches ∞&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="205" data-line-end="206">Writing the cost function this way guarantees that J(θ) is convex for logistic regression.&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="207" data-line-end="209">We can compress our <code>Cost Function's</code> two conditional cases into one case:&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="202" data-line-end="203">Writing the cost function this way guarantees that J(θ) is convex for logistic regression.&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="204" data-line-end="206">We can compress our <code>Cost Function's</code> two conditional cases into one case:&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/cost-func_2.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="210" data-line-end="213">Notice that when <code>y=1</code>, then the second term will be zero and will not affect the result. And if <code>y=0</code>, then the first term will be zero and will not affect the result.&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="207" data-line-end="210">Notice that when <code>y=1</code>, then the second term will be zero and will not affect the result. And if <code>y=0</code>, then the first term will be zero and will not affect the result.&lt;br&gt;<br>
 Therefore, our <code>Cost function</code> is :&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/cost-func_3.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<h2 class="code-line" data-line-start=214 data-line-end=215><a id="Gradient_Descent_214"></a>Gradient Descent</h2>
-<p class="has-line-data" data-line-start="215" data-line-end="219">General form of Gradient Descent :&lt;br&gt;<br>
+<h2 class="code-line" data-line-start=211 data-line-end=212><a id="Gradient_Descent_211"></a>Gradient Descent</h2>
+<p class="has-line-data" data-line-start="212" data-line-end="216">General form of Gradient Descent :&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/general_gradient_descent.PNG’&gt;&lt;/p&gt;&lt;br&gt;<br>
 Working out the derivative part using Calculus we get:&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/gradient_descent.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="220" data-line-end="221">This algorithm looks similar to <a href="https://github.com/JuzerShakir/Linear_Regression#gradient-descent-for-multivariate-linear-regression">Gradient Descent of Linear Regression</a> but its not since <code>h(x)</code> here is a <code>logistic/sigmoid function</code> and <code>h(x)</code> in <code>linear regression</code> is θ&lt;sup&gt;T&lt;/sup&gt;x.</p>
-<h2 class="code-line" data-line-start=222 data-line-end=223><a id="Multiclass_Classification_222"></a>Multiclass Classification</h2>
-<p class="has-line-data" data-line-start="223" data-line-end="226">Now we will approach the classification of data when we have more than <code>2 categories</code>. Instead of y ϵ {0,1} we will expand our definition so that y ϵ {0,1,2…,n}.&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="217" data-line-end="218">This algorithm looks similar to <a href="https://github.com/JuzerShakir/Linear_Regression#gradient-descent-for-multivariate-linear-regression">Gradient Descent of Linear Regression</a> but its not since <code>h(x)</code> here is a <code>logistic/sigmoid function</code> and <code>h(x)</code> in <code>linear regression</code> is θ&lt;sup&gt;T&lt;/sup&gt;x.</p>
+<h2 class="code-line" data-line-start=219 data-line-end=220><a id="Multiclass_Classification_219"></a>Multiclass Classification</h2>
+<p class="has-line-data" data-line-start="220" data-line-end="223">Now we will approach the classification of data when we have more than <code>2 categories</code>. Instead of y ϵ {0,1} we will expand our definition so that y ϵ {0,1,2…,n}.&lt;br&gt;<br>
 We need to predict the probability that <code>y</code> is a member of one of our classes from {0,1,2…,n}.&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/Multiclass_Probability.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="227" data-line-end="228">We apply <code>Logistic Regression</code> to each class, and then choose hypothesis which returned the highest probability and use to predict new <code>x</code> value.</p>
-<h2 class="code-line" data-line-start=229 data-line-end=230><a id="Regularization_229"></a>Regularization</h2>
-<p class="has-line-data" data-line-start="230" data-line-end="238">Let’s say that we have a function:&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="224" data-line-end="225">We apply <code>Logistic Regression</code> to each class, and then choose hypothesis which returned the highest probability and use to predict new <code>x</code> value.</p>
+<h2 class="code-line" data-line-start=226 data-line-end=227><a id="Regularization_226"></a>Regularization</h2>
+<p class="has-line-data" data-line-start="227" data-line-end="235">Let’s say that we have a function:&lt;br&gt;<br>
 h(x) = g(θ&lt;sub&gt;0&lt;/sub&gt; + θ&lt;sub&gt;1&lt;/sub&gt;x&lt;sub&gt;1&lt;/sub&gt; + θ&lt;sub&gt;2&lt;/sub&gt;x&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt; + θ&lt;sub&gt;3&lt;/sub&gt;x&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;x&lt;sub&gt;2&lt;/sub&gt; +<br>
 θ&lt;sub&gt;4&lt;/sub&gt;x&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;x&lt;sub&gt;2&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt; +<br>
 θ&lt;sub&gt;5&lt;/sub&gt;x&lt;sub&gt;1&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;x&lt;sub&gt;2&lt;/sub&gt;&lt;sup&gt;3&lt;/sup&gt;<br>
@@ -193,14 +168,14 @@ h(x) = g(θ&lt;sub&gt;0&lt;/sub&gt; + θ&lt;sub&gt;1&lt;/sub&gt;x&lt;sub&gt;1&lt
 and it fits the data as follows:&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/overfit.PNG’&gt;&lt;/p&gt;&lt;br&gt;<br>
 As we can clearly see this function overfits the data and will not generalize well for new or unseen data.</p>
-<h3 class="code-line" data-line-start=239 data-line-end=240><a id="Cost_Function_for_Regularization_239"></a>Cost Function for Regularization</h3>
-<p class="has-line-data" data-line-start="240" data-line-end="242">We’ll want to eliminate the influence of the parameters without actually getting rid of these features or changing the form of the hypothesis function. We instead modify our <code>Cost function.</code>&lt;br&gt;<br>
+<h3 class="code-line" data-line-start=236 data-line-end=237><a id="Cost_Function_for_Regularization_236"></a>Cost Function for Regularization</h3>
+<p class="has-line-data" data-line-start="237" data-line-end="239">We’ll want to eliminate the influence of the parameters without actually getting rid of these features or changing the form of the hypothesis function. We instead modify our <code>Cost function.</code>&lt;br&gt;<br>
 Our Cost Function was:&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="243" data-line-end="244">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/cost-func_3.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="245" data-line-end="247">We can regularize this equation by adding a term to the end:&lt;br&gt;<br>
+<p class="has-line-data" data-line-start="240" data-line-end="241">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/cost-func_3.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="242" data-line-end="244">We can regularize this equation by adding a term to the end:&lt;br&gt;<br>
 &lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/regularized_cost-func.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="248" data-line-end="249">The second sum, &lt;img src = ‘Formulas/term_1.PNG’&gt;, means to explicitly exclude the bias term, θ&lt;sub&gt;0&lt;/sub&gt;, i.e the θ vector is indexed from 0 to n (holding n+1 values, θ&lt;sub&gt;0&lt;/sub&gt; through θ&lt;sub&gt;n&lt;/sub&gt;), and this sum explicitly skips θ&lt;sub&gt;0&lt;/sub&gt;, by running from 1 to n. Thus, when computing the equation, we should continously update the 2 following equation:</p>
-<h3 class="code-line" data-line-start=250 data-line-end=251><a id="Gradeint_Descent_250"></a>Gradeint Descent</h3>
-<p class="has-line-data" data-line-start="251" data-line-end="252">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/regularized_gradient_descent.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
-<p class="has-line-data" data-line-start="253" data-line-end="254">This may look identical to <a href="https://github.com/JuzerShakir/Linear_Regression#gradient-descent-for-regularization">Linear Regression’s regularization Gradient Descent</a> but the hypothesis function is different, here we have <code>Sigmoid or Logistic Function</code> and for Linear we have θ&lt;sup&gt;T&lt;/sup&gt;x.</p>
+<p class="has-line-data" data-line-start="245" data-line-end="246">The second sum, &lt;img src = ‘Formulas/term_1.PNG’&gt;, means to explicitly exclude the bias term, θ&lt;sub&gt;0&lt;/sub&gt;, i.e the θ vector is indexed from 0 to n (holding n+1 values, θ&lt;sub&gt;0&lt;/sub&gt; through θ&lt;sub&gt;n&lt;/sub&gt;), and this sum explicitly skips θ&lt;sub&gt;0&lt;/sub&gt;, by running from 1 to n. Thus, when computing the equation, we should continously update the 2 following equation:</p>
+<h3 class="code-line" data-line-start=247 data-line-end=248><a id="Gradeint_Descent_247"></a>Gradeint Descent</h3>
+<p class="has-line-data" data-line-start="248" data-line-end="249">&lt;p align = ‘center’&gt;&lt;img src = ‘Formulas/regularized_gradient_descent.PNG’&gt;&lt;/p&gt;&lt;br&gt;</p>
+<p class="has-line-data" data-line-start="250" data-line-end="251">This may look identical to <a href="https://github.com/JuzerShakir/Linear_Regression#gradient-descent-for-regularization">Linear Regression’s regularization Gradient Descent</a> but the hypothesis function is different, here we have <code>Sigmoid or Logistic Function</code> and for Linear we have θ&lt;sup&gt;T&lt;/sup&gt;x.</p>
 </body></html>
