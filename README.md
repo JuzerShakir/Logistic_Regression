@@ -249,3 +249,8 @@ The second sum, <img src = 'Formulas/term_1.PNG'>, means to explicitly exclude t
 <p align = 'center'><img src = 'Formulas/regularized_gradient_descent.PNG'></p><br>
 
 This may look identical to [Linear Regression's regularization Gradient Descent](https://github.com/JuzerShakir/Linear_Regression#gradient-descent-for-regularization) but the hypothesis function is different, here we have `Sigmoid or Logistic Function` and for Linear we have θ<sup>T</sup>x.
+
+<br>
+<br>
+
+<p align="center">Developed by <a href="https://juzershakir.github.io/", target="_blank">Juzer Shakir</a> | Copyright © 2021 | All Rights Reserved</p>
