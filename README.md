@@ -36,11 +36,8 @@ A Mathematical intuition and quick guide and understanding of how Logistic Regre
 <br>
 
 ### Example of Classification Problem
-| Subject | Negative | Positive |
-| :-----: | :------: | :------: |
-| Email | Not-Spam | Spam |
-| Online Transaction (Fradulent) | No | Yes |
-| Tumor | Benign | Malignant |
+
+<p align = 'center'><img src = 'Formulas/example.png'></p>
 
 <br>
 
